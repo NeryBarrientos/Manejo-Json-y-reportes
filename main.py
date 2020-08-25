@@ -5,7 +5,9 @@ def cargar_datos(ruta):
     for i in ruta:
         with open(i + ".json") as archivos:
             datos = json.loads(archivos.read())
-            print(datos)
+            dato=[]
+            dato.append(datos)
+            print(dato)
 
 
 while True:

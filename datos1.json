@@ -1,30 +1,20 @@
 [
- {
-  "nombre": "Nery",
-  "edad": 20,
-  "altura(m)": 1.95,
-  "Genero": "Masculino",
-  "Nacionalidad": "prueba"
- },
- {
-  "nombre": "Pedro",
-  "edad": 18,
-  "altura(m)": 1.80,
-  "Genero": "Masculino",
-  "Nacionalidad": "prueba"
- },
-  {
-  "nombre": "Sofia",
-  "edad": 21,
-  "altura(m)": 1.65,
-  "Genero": "Femenino",
-  "Nacionalidad": "prueba"
- },
-  {
-  "nombre": "Alejandra",
-  "edad": 19,
-  "altura(m)": 1.70,
-  "Genero": "Femenino",
-  "Nacionalidad": "prueba"
- }
+    {
+        "nombre": "registro 3",
+        "edad": 45,
+        "activo": true,
+        "promedio": 56.456
+    },
+    {
+        "nombre": "registro 4",
+        "edad": 35,
+        "activo": false,
+        "promedio": 45.896
+    },
+    {
+        "nombre": "registro 5",
+        "edad": 55,
+        "activo": true,
+        "promedio": 49.857
+    }
 ]
