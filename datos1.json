@@ -1,0 +1,30 @@
+[
+ {
+  "nombre": "Nery",
+  "edad": 20,
+  "altura(m)": 1.95,
+  "Genero": "Masculino",
+  "Nacionalidad": "Guatelmateca"
+ },
+ {
+  "nombre": "Pedro",
+  "edad": 18,
+  "altura(m)": 1.80,
+  "Genero": "Masculino",
+  "Nacionalidad": "Mexicana"
+ },
+  {
+  "nombre": "Sofia",
+  "edad": 21,
+  "altura(m)": 1.65,
+  "Genero": "Femenino",
+  "Nacionalidad": "Rusa"
+ },
+  {
+  "nombre": "Alejandra",
+  "edad": 19,
+  "altura(m)": 1.70,
+  "Genero": "Femenino",
+  "Nacionalidad": "Estadounidense"
+ }
+]

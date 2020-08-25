@@ -11,23 +11,26 @@ def cargar_datos(ruta):
 #cargar_datos(ruta)
 
 while True:
-    print('Escoja una opcion: \n 1.CARGAR \n 2.SELECCIONAR \n 3.MAXIMO \n 4.MINIMO \n 5.SUMA \n 6.CUENTA \n 7.REPORTAR \n 8.SALIR')
+    print('Escoja una opcion: \n CARGAR \n SELECCIONAR \n MAXIMO \n MINIMO \n SUMA \n CUENTA \n REPORTAR \n 8.SALIR')
     opt = input()
-    if opt == '1':
+    if opt == 'CARGAR':
         print("Escriba el nombre del archivo a cargar")
+        print()
         ruta = input()
+        ruta = ruta + '.json'
         cargar_datos(ruta)
-    elif opt == '2':
+    elif opt == 'SELECCIONAR':
         print("opcion 2")
-    elif opt == '3':
+    elif opt == 'MAXIMO':
         print("opcion 3")
-    elif opt == '4':
+    elif opt == 'MINIMO':
         print("opcion 4")
-    elif opt == '5':
+    elif opt == 'SUMA':
         print("opcion 5")
-    elif opt == '6':
+    elif opt == 'CUENTA':
         print("opcion 6")
-    elif opt == '7':
+    elif opt == 'REPORTAR':
         print("opcion 7")
     else:
         exit()
+        print()
