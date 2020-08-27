@@ -1,18 +1,18 @@
 [
     {
-        "nombre": "registro 3",
+        "nombre": "registro 4",
         "edad": 45,
         "activo": true,
         "promedio": 56.456
     },
     {
-        "nombre": "registro 4",
+        "nombre": "registro 5",
         "edad": 35,
         "activo": false,
         "promedio": 45.896
     },
     {
-        "nombre": "registro 5",
+        "nombre": "registro 6",
         "edad": 55,
         "activo": true,
         "promedio": 49.857
