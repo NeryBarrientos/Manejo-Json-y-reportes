@@ -32,6 +32,8 @@ def main():
     atributos = opcion
     comando = opcion[0][:6]
     comando1 = opcion[0][:11]
+    comando2 = opcion[0][:4]
+    opcionsuma = opcion[0][5:]
     todos = opcion[0][12:13]
     ruta[0] = ruta[0].replace(" ","")
     ruta[0] = ruta[0][6:]
@@ -72,8 +74,13 @@ def main():
                 promediominimo = np.array(max_promedio)
                 print("El promedio minimo es : " + str(np.amin(promediominimo)))
         main()
-    elif (comando.lower() == 'suma'):
-        print("opcion 5")
+    elif (comando2.lower() == 'suma'):
+        print(opcionsuma)
+        if opcionsuma == 'edad':
+            sumaedad(max_edad)
+        elif opcionsuma == 'promedio':
+            sumaprom(max_promedio)
+        main()
     elif (comando.lower() == 'cuenta'):
         print("opcion 6")
     elif (comando.lower() == 'reportar'):
@@ -103,4 +110,15 @@ def imprimir_todos():
             print("--------------------------")
         contador += 1
 
+def sumaedad(listaNumeros):
+    misuma = 0
+    for i in listaNumeros:
+        misuma = misuma + i
+    print ("La suma de las edades es : " + str(misuma))
+
+def sumaprom(listapro):
+    suma = 0
+    for i in listapro:
+        suma = suma + i
+    print ("La suma de los promedios es : " + str(suma))
 main()
