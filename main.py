@@ -6,6 +6,7 @@ opcion = []
 maximo = listacargada
 max_edad = []
 max_promedio = []
+num_nombres = []
 n = "Nombre : "
 e = "Edad : "
 a = "Activo : "
@@ -13,6 +14,8 @@ p = "Promedio : "
 atributos = []
 def cargar_datos(ruta):
     #print(ruta)
+    ruta[0] = ruta[0].replace(" ","")
+    ruta[0] = ruta[0][6:]
     for i in ruta:
         with open(i + ".json") as archivos:
             datos = json.loads(archivos.read())
@@ -23,6 +26,7 @@ def cargar_datos(ruta):
         for j in range(len(i)):
             max_edad.append(listacargada[contador][j]['edad'])
             max_promedio.append(listacargada[contador][j]['promedio'])
+            num_nombres.append(listacargada[contador][j]['nombre'])
         contador += 1
 
 def main():
@@ -35,8 +39,6 @@ def main():
     comando2 = opcion[0][:4]
     opcionsuma = opcion[0][5:]
     todos = opcion[0][12:13]
-    ruta[0] = ruta[0].replace(" ","")
-    ruta[0] = ruta[0][6:]
     if (comando.lower() == 'cargar'):
         for i in range(len(ruta)):
             ruta[i] = ruta[i].replace(" ", "")
@@ -53,10 +55,12 @@ def main():
         else:
             main()
     elif (comando.lower() == 'maximo'):
+        atributos[0] = atributos[0][6:]
+        print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
             #print(atributos)
-            if atributos[0] == 'edad':
+            if atributos[0][:6] == 'edad':
                 edadmaxima = np.array(max_edad)
                 print("La edad maxima es : " + str(np.amax(edadmaxima)))
             elif atributos[0] == 'promedio':
@@ -82,7 +86,8 @@ def main():
             sumaprom(max_promedio)
         main()
     elif (comando.lower() == 'cuenta'):
-        print("opcion 6")
+        print("el numero de registros es : " + str(len(num_nombres)))
+        main()
     elif (comando.lower() == 'reportar'):
         print("opcion 7")
     else:
