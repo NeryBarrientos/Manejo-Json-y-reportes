@@ -1,5 +1,6 @@
 import json
 import numpy as np
+import webbrowser
 listacargada = []
 ruta = []
 opcion = []
@@ -7,6 +8,8 @@ maximo = listacargada
 max_edad = []
 max_promedio = []
 num_nombres = []
+table_activo = []
+titulo = ['Nombre' , 'Edad' , 'Activo' , 'Promedio']
 n = "Nombre : "
 e = "Edad : "
 a = "Activo : "
@@ -27,28 +30,28 @@ def cargar_datos(ruta):
             max_edad.append(listacargada[contador][j]['edad'])
             max_promedio.append(listacargada[contador][j]['promedio'])
             num_nombres.append(listacargada[contador][j]['nombre'])
+            table_activo.append(listacargada[contador][j]['activo'])
         contador += 1
 
 def main():
-    print("estas en el menu")
-    opcion = input().split(",")
+    print(">>>>>" , end='')
+    lectura  = input()
+    opcion = lectura.split(",")
     ruta = opcion
     atributos = opcion
     comando = opcion[0][:6]
     comando1 = opcion[0][:11]
     comando2 = opcion[0][:4]
+    comando3 = opcion[0][:8]
     opcionsuma = opcion[0][5:]
     todos = opcion[0][12:13]
     if (comando.lower() == 'cargar'):
         for i in range(len(ruta)):
             ruta[i] = ruta[i].replace(" ", "")
         cargar_datos(ruta)
-        print(listacargada)
+        #print(listacargada)
         main()
     elif (comando1.lower() == 'seleccionar'):
-        #print("Que atributos desea buscar")
-        #atributos = input().split(',')
-        #print(atributos)
         if (todos == '*'):    
             imprimir_todos()
             main()
@@ -59,7 +62,6 @@ def main():
         print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
-            #print(atributos)
             if atributos[0][:6] == 'edad':
                 edadmaxima = np.array(max_edad)
                 print("La edad maxima es : " + str(np.amax(edadmaxima)))
@@ -68,10 +70,11 @@ def main():
                 print("El promedio maximo es : " + str(np.amax(promediomaximo)))
         main()
     elif (comando.lower() == 'minimo'):
+        atributos[0] = atributos[0][6:]
+        print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
-            #print(atributos)
-            if atributos[0] == 'edad':
+            if atributos[0][:6] == 'edad':
                 edadminima = np.array(max_edad)
                 print("La edad minima es : " + str(np.amin(edadminima)))
             elif atributos[0] == 'promedio':
@@ -86,13 +89,29 @@ def main():
             sumaprom(max_promedio)
         main()
     elif (comando.lower() == 'cuenta'):
-        print("el numero de registros es : " + str(len(num_nombres)))
+        print("El numero de registros es : " + str(len(num_nombres)))
         main()
-    elif (comando.lower() == 'reportar'):
-        print("opcion 7")
+    elif (comando3.lower() == 'reportar'):
+        n = lectura.replace(" " , "")
+        n = n[8:]
+        html = '<!DOCTYPE html> \n <html lang="en"> \n <head> \n <meta charset="utf-8"> \n <title>Datos reportados</title>'
+        html = html + '</head> \n <body bgcolor="cyan"> \n <center> \n <table border="1"> \n <tr>'
+        for aux in range(len(titulo)):
+            nomb = '<th bgcolor="green">' + titulo[aux] + '</th>'
+            html = html + nomb
+        m = int(n)
+        for elem in range(m):
+            temp = '<tr> \n <td>' + str(num_nombres[elem]) + '</td> <td>' + str(max_edad[elem]) + '</td> <td>' + str(table_activo[elem]) + '</td> <td>' + str(max_promedio[elem]) + '</td>'  
+            temp = temp + '\n </tr> \n'
+            html = html + temp
+        html = html + '</table> \n </center> \n </body> \n </html>'
+        crear = open('reportes.html' , 'w')
+        crear.write(html)
+        crear.close()
+        webbrowser.open_new_tab('reportes.html')
+        main()
     else:
         exit()
-        print()
 
 def opcion_cargar(opt):
     if (opt == 'cargar'):
