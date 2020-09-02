@@ -19,7 +19,7 @@ Este comando sirve para cargar en memoria archivos de la extensión .json, el cu
 
 
 ### Comando Seleccionar:
-El siguiente comando nos sirve para seleccionar todos los datos para mostrar en consola, teniendo como estructura la siguiente forma:	**Seleccionar * **
+El siguiente comando nos sirve para seleccionar todos los datos para mostrar en consola, teniendo como estructura la siguiente forma:	Seleccionar *
 
 Nota: Solo esta desarollada la funcionalidad para seleccionar todos los elementos.
 
