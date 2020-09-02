@@ -32,10 +32,12 @@ Este comando solo calcula el minimo de los atributos edad y promedio, estros tra
 ### Comando Suma
 Este comando tiene la funcionalidad de calcular la suma del atributo que deseemos en todos los archivos cargados a memoria previamente, este tiene la siguiente estructura: 
 **suma edad**
+
 Este comando solo calcula la suma de los atributos edad y promedio, estos atributos se calculan de forma independiente en cada linea de la consola.
 
 ### Comando Cuenta
 Este comando tiene la funcionalidad de imprimir en pantalla el numero de registros que hemos cargado en nuestra consola, y este comando tiene la siguiente estructura: **cuenta**
-###Comando Reportar
-Este comando tiene como funcion de mostrar en un archivo html el numero de registros que nosotros solicitemos en consola, este comando tiene la siguiente estructura: **reportar n**
+### Comando Reportar
+Este comando tiene como funcion de mostrar en un archivo html el numero de registros que nosotros solicitemos en consola, este comando tiene la siguiente estructura: 
+**reportar n**
 Donde n es el numero de registros que se desea reportar
