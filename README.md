@@ -30,7 +30,8 @@ Este comando solo calcula el maximo de los atributos edad y promedio, se calcula
 Este comando tiene la funcionalidad de calcular el valor maximo del atributo que deseemos, este tiene la siguiente estructura: **minimo edad**
 Este comando solo calcula el minimo de los atributos edad y promedio, estros traibutos se calculan de forma independiente en cada linea de la consola.
 ### Comando Suma
-Este comando tiene la funcionalidad de calcular la suma del atributo que deseemos en todos los archivos cargados a memoria previamente, este tiene la siguiente estructura: ** suma edad **
+Este comando tiene la funcionalidad de calcular la suma del atributo que deseemos en todos los archivos cargados a memoria previamente, este tiene la siguiente estructura: 
+**suma edad**
 Este comando solo calcula la suma de los atributos edad y promedio, estos atributos se calculan de forma independiente en cada linea de la consola.
 
 ### Comando Cuenta
