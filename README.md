@@ -40,4 +40,5 @@ Este comando tiene la funcionalidad de imprimir en pantalla el numero de registr
 ### Comando Reportar
 Este comando tiene como funcion de mostrar en un archivo html el numero de registros que nosotros solicitemos en consola, este comando tiene la siguiente estructura: 
 **reportar n**
+
 Donde n es el numero de registros que se desea reportar
