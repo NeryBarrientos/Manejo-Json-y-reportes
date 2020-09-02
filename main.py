@@ -20,7 +20,7 @@ def cargar_datos(ruta):
     ruta[0] = ruta[0].replace(" ","")
     ruta[0] = ruta[0][6:]
     for i in ruta:
-        with open(i + ".json") as archivos:
+        with open(i) as archivos:
             datos = json.loads(archivos.read())
             listacargada.append(datos)
             print("Archivo: " + i + " cargado")
@@ -59,7 +59,7 @@ def main():
             main()
     elif (comando.lower() == 'maximo'):
         atributos[0] = atributos[0][6:]
-        print(atributos)
+        #print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
             if atributos[0][:6] == 'edad':
@@ -71,7 +71,7 @@ def main():
         main()
     elif (comando.lower() == 'minimo'):
         atributos[0] = atributos[0][6:]
-        print(atributos)
+        #print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
             if atributos[0][:6] == 'edad':
@@ -82,7 +82,7 @@ def main():
                 print("El promedio minimo es : " + str(np.amin(promediominimo)))
         main()
     elif (comando2.lower() == 'suma'):
-        print(opcionsuma)
+        #print(opcionsuma)
         if opcionsuma == 'edad':
             sumaedad(max_edad)
         elif opcionsuma == 'promedio':
@@ -94,17 +94,17 @@ def main():
     elif (comando3.lower() == 'reportar'):
         n = lectura.replace(" " , "")
         n = n[8:]
-        html = '<!DOCTYPE html> \n <html lang="en"> \n <head> \n <meta charset="utf-8"> \n <title>Datos reportados</title>'
-        html = html + '</head> \n <body bgcolor="cyan"> \n <center> \n <table border="1"> \n <tr>'
+        html = '<!DOCTYPE html> \n <html lang="en"> \n <head> \n <meta charset="utf-8"> \n <title>Datos reportados</title> \n <link rel="stylesheet" href="css/bootstrap.min.css">'
+        html = html + '<style> \n body { background-image: url("fondo.jpg");\n background-size: cover;}\n .container{ margin-top: 200px;}\n </style> \n</head> \n <body> \n <div class="container"> \n <h1 class="text-center bg-info text-primary"><strong>Tabla de Datos</strong></h1> \n <table class="table table-bordered text-center"> \n <tr class="info">'
         for aux in range(len(titulo)):
-            nomb = '<th bgcolor="green">' + titulo[aux] + '</th>'
+            nomb = '<th class="text-center">' + titulo[aux] + '</th>'
             html = html + nomb
         m = int(n)
         for elem in range(m):
-            temp = '<tr> \n <td>' + str(num_nombres[elem]) + '</td> <td>' + str(max_edad[elem]) + '</td> <td>' + str(table_activo[elem]) + '</td> <td>' + str(max_promedio[elem]) + '</td>'  
+            temp = '<tr class="warning"> \n <td>' + str(num_nombres[elem]) + '</td> <td>' + str(max_edad[elem]) + '</td> <td>' + str(table_activo[elem]) + '</td> <td>' + str(max_promedio[elem]) + '</td>'  
             temp = temp + '\n </tr> \n'
             html = html + temp
-        html = html + '</table> \n </center> \n </body> \n </html>'
+        html = html + ' </table> \n </div> \n </body> \n </html>'
         crear = open('reportes.html' , 'w')
         crear.write(html)
         crear.close()
