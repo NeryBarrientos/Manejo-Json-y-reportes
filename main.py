@@ -49,7 +49,7 @@ def main():
         for i in range(len(ruta)):
             ruta[i] = ruta[i].replace(" ", "")
         cargar_datos(ruta)
-        #print(listacargada)
+        print("")
         main()
     elif (comando1.lower() == 'seleccionar'):
         if (todos == '*'):    
@@ -59,37 +59,41 @@ def main():
             main()
     elif (comando.lower() == 'maximo'):
         atributos[0] = atributos[0][6:]
-        #print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
             if atributos[0][:6] == 'edad':
                 edadmaxima = np.array(max_edad)
                 print("La edad maxima es : " + str(np.amax(edadmaxima)))
+                print("")
             elif atributos[0] == 'promedio':
                 promediomaximo = np.array(max_promedio)
                 print("El promedio maximo es : " + str(np.amax(promediomaximo)))
+                print("")
         main()
     elif (comando.lower() == 'minimo'):
         atributos[0] = atributos[0][6:]
-        #print(atributos)
         for i in range(len(atributos)):
             atributos[i] = atributos[i].replace(" ", "")
             if atributos[0][:6] == 'edad':
                 edadminima = np.array(max_edad)
                 print("La edad minima es : " + str(np.amin(edadminima)))
+                print("")
             elif atributos[0] == 'promedio':
                 promediominimo = np.array(max_promedio)
                 print("El promedio minimo es : " + str(np.amin(promediominimo)))
+                print("")
         main()
     elif (comando2.lower() == 'suma'):
-        #print(opcionsuma)
         if opcionsuma == 'edad':
             sumaedad(max_edad)
+            print("")
         elif opcionsuma == 'promedio':
             sumaprom(max_promedio)
+            print("")
         main()
     elif (comando.lower() == 'cuenta'):
         print("El numero de registros es : " + str(len(num_nombres)))
+        print("")
         main()
     elif (comando3.lower() == 'reportar'):
         n = lectura.replace(" " , "")
@@ -112,14 +116,6 @@ def main():
         main()
     else:
         exit()
-
-def opcion_cargar(opt):
-    if (opt == 'cargar'):
-        print("Escriba el nombre del archivo a cargar")
-        print()
-        ruta = input().split(',')
-        listacargada.append(cargar_datos(ruta))
-        print(listacargada)
 
 def imprimir_todos():
     print(listacargada)
